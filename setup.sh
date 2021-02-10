@@ -13,14 +13,10 @@ if test ! "$(which brew)"; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Update
-brew update
-
 # Install web apps
 brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask signal
-
 
 # Install dev apps
 brew install --cask visual-studio-code
@@ -72,12 +68,40 @@ brew install mosh
 brew install zola
 brew install curl
 brew install ripgrep
+brew install starship
 
 brew tap bradyjoslin/sharewifi
 brew install sharewifi
 
 # Remove outdated versions
 brew cleanup
+
+# Install node using nvm
+# Install if we don't have it
+if test ! "$(which nvm)"; then
+  echo "Installing nvm..."
+  touch ~/.zshrc
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  nvm install node
+fi
+
+# Install Global npm packages
+npm update -g
+npm i appcenter-cli -g
+
+# Install wrangler
+cargo install wrangler
+
+# Install FireCode NF
+curl -Ls -o FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+unzip FiraCode.zip -d FiraCode
+mkdir -p "$HOME/Library/Fonts"
+cp -a FiraCode/. "$HOME/Library/Fonts"
+rm -r FiraCode
+rm FiraCode.zip
 
 # Remove Teams codesigning for virtual cameras
 sudo codesign --remove-signature "/Applications/Microsoft Teams.app"
