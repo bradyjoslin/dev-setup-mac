@@ -3,7 +3,7 @@
 sudo softwareupdate -ia --verbose
 xcode-select --install
 
-set -e
+# set -e
 
 # Install Homebrew if needed
 # Check for Homebrew,
@@ -69,6 +69,7 @@ brew install zola
 brew install curl
 brew install ripgrep
 brew install starship
+brew install cloudflare/cloudflare/cloudflared
 
 brew tap bradyjoslin/sharewifi
 brew install sharewifi
@@ -94,21 +95,3 @@ npm i appcenter-cli -g
 
 # Install wrangler
 cargo install wrangler
-
-# Install FireCode NF
-curl -Ls -o FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-unzip FiraCode.zip -d FiraCode
-mkdir -p "$HOME/Library/Fonts"
-cp -a FiraCode/. "$HOME/Library/Fonts"
-rm -r FiraCode
-rm FiraCode.zip
-
-# Remove Teams codesigning for virtual cameras
-sudo codesign --remove-signature "/Applications/Microsoft Teams.app"
-sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper.app"
-sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (GPU).app"
-sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (Plugin).app"
-sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (Renderer).app"
-
-# Configure Mac
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
