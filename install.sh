@@ -56,7 +56,7 @@ brew install --cask blockblock
 brew install --cask reikey
 
 # Install dev tools
-brew install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 brew install jq
 brew install azure-cli
 brew install shellcheck
