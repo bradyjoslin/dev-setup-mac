@@ -58,6 +58,7 @@ brew install --cask reikey
 # Install dev tools
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 brew install jq
+brew install go
 brew install azure-cli
 brew install shellcheck
 brew install gh
