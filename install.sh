@@ -71,9 +71,13 @@ brew install curl
 brew install ripgrep
 brew install starship
 brew install cloudflare/cloudflare/cloudflared
+brew install exa
 
 brew tap bradyjoslin/sharewifi
 brew install sharewifi
+
+brew tap bradyjoslin/rsieve
+brew install rsieve
 
 # Remove outdated versions
 brew cleanup
