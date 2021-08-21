@@ -69,7 +69,10 @@ brew install mosh
 brew install zola
 brew install curl
 brew install ripgrep
+
 brew install starship
+echo "eval $(starship init zsh)" >> "$HOME/.zshrc"
+
 brew install cloudflare/cloudflare/cloudflared
 brew install exa
 
