@@ -16,7 +16,6 @@ fi
 # Install web apps
 brew install --cask firefox
 brew install --cask google-chrome
-brew install --cask signal
 
 # Install dev apps
 brew install --cask visual-studio-code
@@ -25,7 +24,6 @@ brew install --cask iterm2
 brew install --cask dotnet-sdk
 brew install --cask postman
 brew install --cask github
-brew install --cask graphiql
 brew install --cask sketch
 brew install --cask microsoft-azure-storage-explorer
 brew install --cask visual-studio
@@ -35,9 +33,7 @@ brew install --cask microsoft-teams
 brew install --cask discord
 brew install --cask slack
 brew install --cask zoom
-brew install --cask telegram
 brew install --cask cloudflare-warp
-brew install --cask krisp
 
 # Install productivity apps
 brew install --cask alfred
